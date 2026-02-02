@@ -2,7 +2,7 @@ package com.alkemy.f20260202;
 
 import java.util.Scanner;
 
-public class Main {
+public class Mientras {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class Main {
 		System.out.println("Ingrese el limite");
 		int limite = sc.nextInt();
 		
-		while(suma < limite) {// 0 > 1 F ; 0 < 1 V
+		while(!(suma > limite)) {// 0 > 1 F ; 0 < 1 V
 			
 			//Sumar cada número ingresado (reemplazando el valor de “num”)
 			//hasta que supere el valor ingresado como límite.
@@ -33,7 +33,7 @@ public class Main {
 		}
 		
 		System.out.printf("el limite es %d  y la suma es %d", limite, suma);
-
+		sc.close();
 
 	}
 

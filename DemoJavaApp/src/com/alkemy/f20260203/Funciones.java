@@ -36,7 +36,6 @@ public class Funciones {
 		Integer suma = numero1 + numero2;
 		System.out.println("El resultado es: " + suma);
 		
-		
 	}
 	
 }

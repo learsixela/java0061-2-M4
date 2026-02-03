@@ -1,6 +1,7 @@
 package com.alkemy.f20260203;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Vectores {
 
@@ -10,7 +11,7 @@ public class Vectores {
 		int[] notas = new int[8];//8 cantidad de elementos
 		
 		
-		//asignar valores
+		//asignar valores, por posicion
 		notas[1] = 4;//{0,4,0,0,0,0,0,0}
 		notas[7] = 65;//{0,4,0,0,0,0,0,65}
 		
@@ -42,11 +43,28 @@ public class Vectores {
 		 * RECORRER ARRAYS
 		 * */
 		//indice == posicion
-		//indice= 0 ; dias.length = 6
+		//indice= 0 ; dias.length = 7
 		for (int indice = 0; indice < dias.length; indice++) {
 			System.out.printf("indice: %d, valor: %s %n",indice,dias[indice]);//dias[4]
 		}
 		
+		//asignacion dinamica
+		Scanner sc = new Scanner(System.in);
+		
+		int[] puntajes = new int[6]; 
+		
+		for (int i = 0; i < puntajes.length; i++) {
+			System.out.println("ingresa el puntaje");
+			int puntaje = sc.nextInt();
+			
+			puntajes[i]=puntaje;
+			
+			//puntajes[i]=sc.nextInt();
+		}
+		
+		System.out.println(Arrays.toString(puntajes));
+		
+		sc.close();
 		
 	}
 

@@ -33,10 +33,11 @@ public class Main {
 	}
 	
 	public static void imprimir2(int varLocal) {
-		int varLocarImprimir2 = 4;
+		int varLocalImprimir2 = 4;//variable local sin ser utilizada
 		System.out.println("*** imprimir 2 ***");
 		System.out.println(varLocal);//6;5
 		System.out.println(variableClase);//3
-		varLocal = 2;
+		varLocal = 2;// modificacion que no causa ningun efecto
+	
 	}
 }

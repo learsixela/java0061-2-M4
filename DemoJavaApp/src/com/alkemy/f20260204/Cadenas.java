@@ -102,6 +102,12 @@ public class Cadenas {
 		
 		System.out.println(Arrays.toString(correo.trim().split("@")));
 		
+		// funcion replace("caracter_a_ reemplazar","nuevo_caracter")
+		String rut = "12.365.478-9";
+		rut = rut.replace(".", "").replace("-", "");
+		
+		System.out.println(rut);
+		
 	}
 
 }

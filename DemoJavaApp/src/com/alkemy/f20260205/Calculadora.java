@@ -3,60 +3,67 @@ package com.alkemy.f20260205;
 import java.util.Scanner;
 
 public class Calculadora {
-
+	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		
 		boolean continuar = true;
-		menu(); 
-		
-		System.out.println("Ingresa el número de tu opción");
-		// Seleccion por parte del usuario
-		if(sc.hasNextInt()) {//valida ingreso de un numero
-			int opcionMenu = sc.nextInt();
+		while(continuar) {
+			menu(); 
 			
-			if (opcionMenu < 0 || opcionMenu >= 6){	
-				System.err.println("Opción invalida");
-			}else {// opciones del 1 al 5
+			System.out.println("Ingresa el número de tu opción");
+			// Seleccion por parte del usuario
+			if(sc.hasNextInt()) {//valida ingreso de un numero
+				int opcionMenu = sc.nextInt();
 				
-				switch (opcionMenu) {
-				case 0:
-					System.out.println("Vuelve pronto...");
-					break;
-				case 1://sumar
-					int suma = suma();
-					System.out.println("El resultado es " + suma);
-					//System.out.println("El resultado es " + (numero1+numero2));
-					break;
-				case 2://resta
-					break;
-				case 3://multiplicacion
-					break;
-				case 4://division
-					break;
-				case 5://modulo o resto numero1 % numero2=
-					break;
+				if (opcionMenu < 0 || opcionMenu >= 6){	
+					System.err.println("Opción invalida");
+				}else {// opciones del 1 al 5
 					
-				default:
-					break;
+					switch (opcionMenu) {
+					case 0:
+						System.out.println("Vuelve pronto...");
+						break;
+					case 1://sumar
+						int suma = suma();
+						System.out.println("El resultado es " + suma);
+						//System.out.println("El resultado es " + (numero1+numero2));
+						break;
+					case 2://resta
+						break;
+					case 3://multiplicacion
+						break;
+					case 4://division
+						break;
+					case 5://modulo o resto numero1 % numero2=
+						break;
+						
+					default:
+						break;
+					}
 				}
+				
+				continuar = deseaContinuar();//llamando y esperando un valor de retorno
+				
+				System.out.println("continuar: "+continuar);
+				
+			}else {
+				System.err.println("Opción invalida");
+				sc.next();//descarte
+				continuar = deseaContinuar();
 			}
-			
-			System.out.println("Quieres continuar con otra operacion ...");
-			System.out.printf("1)SI %n2)NO %n");
-			int opcionContinuar = sc.nextInt();
-			
-			continuar = (opcionContinuar == 1) ? true: false; 
-			System.out.println(continuar);
-			
-		}else {
-			System.err.println("Opción invalida");
-			
 		}
-		
-		//switch, variables, if, for y while
+		System.out.println("Vuelve pronto...");
 		sc.close();
 	}
-
+	public static boolean deseaContinuar() {
+		System.out.println("Quieres continuar con otra operacion ...");
+		System.out.printf("1)SI %n2)NO %n");
+		int opcionContinuar = sc.nextInt();
+		return (opcionContinuar == 1) ? true: false; 
+	}
+	
+	
 	public static void menu() {
 		// Menu calculadora
 		System.out.println("******************");
@@ -72,7 +79,6 @@ public class Calculadora {
 	}
 	
 	public static int suma() {
-		Scanner sc = new Scanner(System.in);
 		int suma_total = 0;
 		System.out.println("Ingrese cantidad de números a sumar");
 		int cantidad = sc.nextInt();
@@ -82,7 +88,6 @@ public class Calculadora {
 			int numero = sc.nextInt();
 			suma_total = suma_total + numero;
 		}
-		sc.close();
 		return suma_total;		
 	}
 }

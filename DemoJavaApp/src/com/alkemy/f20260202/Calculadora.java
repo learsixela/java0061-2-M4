@@ -69,7 +69,7 @@ public class Calculadora {
 		
 		//switch, variables, if, for y while
 		
-		
+		sc.close();
 	}
 
 }

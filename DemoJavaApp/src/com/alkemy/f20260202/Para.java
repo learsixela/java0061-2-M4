@@ -25,6 +25,7 @@ public class Para {
 			suma = suma + numero;
 		}
 		System.out.printf("el limite es %d  y la suma es %d", limite, suma);
+		sc.close();
 	}
 
 }

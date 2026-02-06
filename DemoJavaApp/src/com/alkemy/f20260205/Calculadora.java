@@ -15,21 +15,22 @@ public class Calculadora {
 			// Seleccion por parte del usuario
 			if(sc.hasNextInt()) {//valida ingreso de un numero
 				int opcionMenu = sc.nextInt();
-				
-				if (opcionMenu < 0 || opcionMenu >= 6){	
+				if(opcionMenu == 0) {
+					continuar = false;
+				}
+				else if (opcionMenu < 0 || opcionMenu >= 6){	
 					System.err.println("Opción invalida");
+					continuar = deseaContinuar();//llamando y esperando un valor de retorno
 				}else {// opciones del 1 al 5
-					
+					double resultado = 0.0; 
 					switch (opcionMenu) {
-					case 0:
-						System.out.println("Vuelve pronto...");
-						break;
 					case 1://sumar
-						int suma = suma();
-						System.out.println("El resultado es " + suma);
+						resultado = suma();
+						System.out.println("El resultado es " + resultado);
 						//System.out.println("El resultado es " + (numero1+numero2));
 						break;
 					case 2://resta
+						resultado = resta(22,1);
 						break;
 					case 3://multiplicacion
 						break;
@@ -41,11 +42,8 @@ public class Calculadora {
 					default:
 						break;
 					}
+					continuar = deseaContinuar();//llamando y esperando un valor de retorno
 				}
-				
-				continuar = deseaContinuar();//llamando y esperando un valor de retorno
-				
-				System.out.println("continuar: "+continuar);
 				
 			}else {
 				System.err.println("Opción invalida");
@@ -90,4 +88,9 @@ public class Calculadora {
 		}
 		return suma_total;		
 	}
+	public static int resta(int numero1, int numero2) {
+		return numero1 - numero2;
+	}
+	
+	//captura de numeros double
 }

@@ -54,6 +54,12 @@ public class ClaseMath {
 		System.out.println((int) (Math.random() * 11) + 5);//[5 , 15]
 		System.out.println((int) (Math.random() * 21) - 10);//[-10 , 10]
 		
+		//ejercicio
+		//el sistema generera un numero aleatorio dentro de un rango
+		//el usuario trata de adivinarlo, el sistema entrega pistas de cercania
+		//contar cuantos ingresos realizo.
+		
+		
 	}
 
 }

@@ -1,22 +1,32 @@
 package cl.palma;
 
-import java.util.Scanner;
-
+/**
+ * clase(molde/plantilla) para crear objeto tipo tarea
+ * @author Israel
+ * 
+ * @param id
+ * @param nombre
+ * @param descripcion
+ * @param prioridad
+ * @param completado
+ */
 public class Tarea {
-	static Scanner sc = new Scanner(System.in);
-	
-	static int id; 
-	static String nombre; 
-	static String prioridad;
-	static boolean completado;
-	
-	public static void main(String[] args) {
-		System.out.println("Crear una tarea");
-		
-		
+	//atributos
+	int id; 
+	String nombre; 
+	String descripcion; 
+	String prioridad;
+	boolean completado;
+	//constructores
+	public Tarea() {
+	}
+	public Tarea(int id, String nombre, String descripcion, String prioridad, boolean completado) {
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.prioridad = prioridad;
+		this.completado = completado;
 	}
 	
-	//menu
-	//agregar
-	
+	//métodos (comportamientos)
 }

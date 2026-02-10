@@ -36,6 +36,7 @@ public class Coche {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
 	public String getMarca() {
 		return marca;
 	}

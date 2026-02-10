@@ -19,11 +19,19 @@ public class Main {
 		//estado inicial es la asignacion de valores 
 		//a los atributos
 		
+		//podemos acceder solo por que son atributos publicos
 		System.out.println(micro_electric.color);
 		System.out.println(suv.color);
 		
-		// usando el metodo get
+		// usando el metodo get para acceder al valor del atributo
 		System.out.println(suv.getColor());
+		System.out.println(suv.getMarca());
+		
+		// metodo set, permite asignar o midificar el estado de un atributo
+		micro_electric.setColor("Blanco");
+		System.out.println(micro_electric.getColor());
+		
+
 	}
 
 }

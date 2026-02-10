@@ -27,6 +27,36 @@ public class Tarea {
 		this.prioridad = prioridad;
 		this.completado = completado;
 	}
-	
 	//métodos (comportamientos)
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public String getPrioridad() {
+		return prioridad;
+	}
+	public void setPrioridad(String prioridad) {
+		this.prioridad = prioridad;
+	}
+	public boolean isCompletado() {
+		return completado;
+	}
+	public void setCompletado(boolean completado) {
+		this.completado = completado;
+	}
+	
 }

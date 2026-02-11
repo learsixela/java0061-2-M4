@@ -3,6 +3,8 @@ package cl.palma;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import cl.palma.objetos.Tarea;
+
 /**
  * Clase principal que ejecuta el menu
  * 

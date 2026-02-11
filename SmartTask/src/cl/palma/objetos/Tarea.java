@@ -1,4 +1,4 @@
-package cl.palma;
+package cl.palma.objetos;
 
 /**
  * clase(molde/plantilla) para crear objeto tipo tarea
@@ -57,6 +57,11 @@ public class Tarea {
 	}
 	public void setCompletado(boolean completado) {
 		this.completado = completado;
+	}
+	@Override
+	public String toString() {
+		return "Detalle de Tarea [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", prioridad=" + prioridad
+				+ ", completado=" + completado + "]";
 	}
 	
 }

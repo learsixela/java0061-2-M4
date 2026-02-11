@@ -35,6 +35,33 @@ public class Main {
 		Canal canalCero = new Canal(0,"canal Cero");
 		System.out.println(canalCero.nombre);
 		System.out.println(canalCero.getNombre());
+		
+		//Objeto empresa
+		//Empresa empresaUno = new Empresa(1,"Alfasoft","https://alfasoft.example");
+		Empresa empresaUno = new Empresa();
+		empresaUno.setId(1);
+		empresaUno.setNombre("Alfasoft");
+		empresaUno.setSitioWeb("https://alfasoft.example");
+		
+		paisUno.setId(1);
+		paisUno.setNombre("España");
+		empresaUno.setPais(paisUno);
+		
+		sectorUno.setId(1);
+		sectorUno.setNombre("Software");
+		
+		empresaUno.setSector(sectorUno);
+		
+		System.out.println("");
+		System.out.println("**  información de empresa ***");
+		System.out.println(empresaUno.toString()); 
+		
+		sectorUno.setId(10);
+		sectorUno.setNombre("Redes");
+		
+		System.out.println("");
+		System.out.println("**  información de empresa ***");
+		System.out.println(empresaUno.toString()); 
 	}
 
 }

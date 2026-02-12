@@ -154,7 +154,9 @@ public class Main {
 				if(tarea.isCompletado()) {
 					System.out.println("Tarea ya en estado completado");
 				}else {
+					//tarea.completado = true;
 					tarea.setCompletado(true);
+					//tarea. .setId(12);
 					System.out.println("Tarea marcada como completado");
 				}
 				return;

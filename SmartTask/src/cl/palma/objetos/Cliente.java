@@ -29,9 +29,8 @@ public class Cliente {
 		return "Cliente [nombre=" + nombre + ", apellido=" + apellido + "]";
 	}
 	
-	public void actualizarDatos(Cliente cliente) {
-		this.nombre = cliente.getNombre();
-		this.apellido = cliente.getApellido();
+	public void actualizarDatos(String nombre, String apellido) {
+
 	}
 	
 }

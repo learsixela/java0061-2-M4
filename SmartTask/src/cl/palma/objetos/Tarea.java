@@ -12,11 +12,11 @@ package cl.palma.objetos;
  */
 public class Tarea {
 	//atributos
-	int id; 
-	String nombre; 
-	String descripcion; 
-	String prioridad;
-	boolean completado;
+	private int id; //Id unico, inmutable
+	private String nombre; 
+	private String descripcion; 
+	private String prioridad;
+	private boolean completado;
 	//constructores
 	public Tarea() {
 	}
@@ -31,9 +31,9 @@ public class Tarea {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
+	/*public void setId(int id) {
 		this.id = id;
-	}
+	}*/
 	public String getNombre() {
 		return nombre;
 	}
@@ -49,7 +49,13 @@ public class Tarea {
 	public String getPrioridad() {
 		return prioridad;
 	}
-	public void setPrioridad(String prioridad) {
+	public void setPrioridad(String prioridad) {//AlTa
+		prioridad = prioridad.toUpperCase();
+		if(!prioridad.equals("ALTA") && !prioridad.equals("MEDIA") && !prioridad.equals("BAJA")) {
+			System.err.println("Prioridad no valida");
+			return;
+			//excepcion
+		}
 		this.prioridad = prioridad;
 	}
 	public boolean isCompletado() {

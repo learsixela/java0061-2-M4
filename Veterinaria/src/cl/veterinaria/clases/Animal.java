@@ -1,8 +1,8 @@
 package cl.veterinaria.clases;
 /**
- * Clase Padre
+ * Super Clase Padre
  */
-public class Animal {
+public abstract class Animal {
 	private String nombre;
 	private double peso;
 	
@@ -30,4 +30,14 @@ public class Animal {
 	public void comer() {
 		System.out.println("esta comiendo el "+ nombre);
 	}
+	
+	//metodo abstracto
+	public abstract void hacerRuido();
+
+	@Override
+	public String toString() {
+		return "Animal [nombre=" + nombre + ", peso=" + peso + "]";
+	}
+	
+	
 }

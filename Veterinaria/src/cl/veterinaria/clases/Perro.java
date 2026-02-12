@@ -18,6 +18,29 @@ public class Perro extends Animal{
 		System.out.println("Ya estoy comiento otra vez");
 	}
 
+//g&s
+	public String getRaza() {
+		return raza;
+	}
+
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+
+	@Override
+	public String toString() {
+		String mensaje = "Mi Perro se llama " +super.getNombre()+
+				", su raza es: "+ raza + " y pesa: " + super.getPeso() +" kilos.";
+		return mensaje;
+	}
+
+	@Override
+	public void hacerRuido() {
+		// TODO Auto-generated method stub
+		
+	}
+ 
+
 
 
 

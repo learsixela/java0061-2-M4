@@ -24,18 +24,18 @@ public class Main {
 		System.out.println("**** Polimorfismo *****");
 		/*Polimorfismo*/
 		Animal[] mascotas = new Animal[] {
-			new Conejo(),
-			new Pez()
+			new Conejo(null, 0),
+			new Pez(null, 0)
 		};
 		// recorrer Array
-		for (Mascota mascota : mascotas) {
+		for (Animal mascota : mascotas) {
 			System.out.println(mascota.hacerRuido());
 			mascota.comer();
 			mascota.moverse();
 		}
 		
 		//Polimorfismo DownCasting
-		Mascota  conejin = new Conejo();
+		Animal  conejin = new Conejo(null, 0);
 		conejin.comer();
 		//conejin.dormir();
 		//DownCasting

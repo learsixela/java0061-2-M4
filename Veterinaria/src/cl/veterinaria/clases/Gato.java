@@ -10,28 +10,50 @@ public class Gato extends Animal{
 
 	public Gato(String nombre, double peso, String raza) {
 		super(nombre, peso);
-		this.raza = raza;
+		setRaza(raza);
 	}
-	//metodos
-	@Override
-	public void comer() {
-		super.comer();
-		System.out.println("yo como poquito");
-	}
-	//g&s
+
 	public String getRaza() {
 		return raza;
 	}
 
 	public void setRaza(String raza) {
-		this.raza = raza;
+		if(raza == null || raza.trim().isEmpty()) {
+			System.err.println("Error en el ingreso de la raza");
+			throw new IllegalArgumentException("Error en el ingreso de la raza");
+		}
+		this.raza = raza.trim();
+	}
+	//metodos
+
+	@Override
+	public String hacerRuido() {
+		return "Miau";
 	}
 
 	@Override
-	public void hacerRuido() {
+	public void moverse() {
 		// TODO Auto-generated method stub
+		
+	}
 
-	} 
+	@Override
+	public void comer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dormir() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " raza=" + raza ;
+	}
+
 
 
 }

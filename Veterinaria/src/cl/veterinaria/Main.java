@@ -23,7 +23,7 @@ public class Main {
 		
 		System.out.println("**** Polimorfismo *****");
 		/*Polimorfismo*/
-		Mascota[] mascotas = new Mascota[] {
+		Animal[] mascotas = new Animal[] {
 			new Conejo(),
 			new Pez()
 		};

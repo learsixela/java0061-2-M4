@@ -2,21 +2,29 @@ package cl.veterinaria.clases;
 /**
  * Super Clase Padre
  */
-public abstract class Animal {
+public abstract class Animal implements AnimalBase{
 	private String nombre;
 	private double peso;
-	
-	public Animal(String nombre, double peso) {
-		this.nombre = nombre;
-		this.peso = peso;
+//constructor	
+	protected Animal(String nombre, double peso) {
+		//this.nombre = nombre;
+		//this.peso = peso;
+		setNombre(nombre);
+		setPeso(peso);
 	}
-
+	
+//getters & setters
 	public String getNombre() {
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if(nombre == null || nombre.trim().isEmpty()) {
+			System.err.println("Error en el ingreso del nombre");
+			throw new IllegalArgumentException("Error en el ingreso del nombre");
+		}
+		
+		this.nombre = nombre.trim();
 	}
 
 	public double getPeso() {
@@ -24,23 +32,22 @@ public abstract class Animal {
 	}
 
 	public void setPeso(double peso) {
+		if(peso <= 0) {
+			throw new IllegalArgumentException("El peso debe ser mayor a cero");
+		}
 		this.peso = peso;
 	}
+//metodos
+	@Override
+	public abstract void comer();
 	
-	public void comer() {
-		System.out.println("esta comiendo el "+ nombre);
-	}
-	
-	//metodo abstracto
-	public abstract void hacerRuido();
-	public void dormir() {
-		System.out.println("Tiempo de dormir");
-	}
+	public abstract void dormir();
 
 	@Override
 	public String toString() {
-		return "Animal [nombre=" + nombre + ", peso=" + peso + "]";
+		return getClass().getSimpleName() +" nombre=" + nombre + ", peso=" + peso ;
 	}
+	
 	
 	
 }

@@ -1,10 +1,13 @@
 package cl.veterinaria.clases;
 
-public class Conejo implements Mascota{
+public class Conejo extends Animal{
+
+	public Conejo(String nombre, double peso) {
+		super(nombre, peso);
+	}
 
 	@Override
 	public String hacerRuido() {
-		
 		return "yiiiiiii";
 	}
 

@@ -1,6 +1,10 @@
 package cl.veterinaria.clases;
 
-public class Pez implements Mascota{
+public class Pez extends Animal{
+
+	public Pez(String nombre, double peso) {
+		super(nombre, peso);
+	}
 
 	@Override
 	public String hacerRuido() {
@@ -16,6 +20,12 @@ public class Pez implements Mascota{
 	@Override
 	public void moverse() {
 		System.out.println("El pez nada");
+		
+	}
+
+	@Override
+	public void dormir() {
+		// TODO Auto-generated method stub
 		
 	}
 

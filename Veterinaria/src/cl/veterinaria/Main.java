@@ -3,9 +3,9 @@ package cl.veterinaria;
 import cl.veterinaria.clases.Animal;
 import cl.veterinaria.clases.Conejo;
 import cl.veterinaria.clases.Gato;
-import cl.veterinaria.clases.Mascota;
 import cl.veterinaria.clases.Perro;
 import cl.veterinaria.clases.Pez;
+import cl.veterinaria.interfaces.Mascota;
 
 public class Main {
 	public static void main(String[] args) {

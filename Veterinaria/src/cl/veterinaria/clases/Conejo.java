@@ -6,7 +6,6 @@ public class Conejo extends Animal{
 		super(nombre, peso);
 	}
 
-	@Override
 	public String hacerRuido() {
 		return "yiiiiiii";
 	}
@@ -25,6 +24,12 @@ public class Conejo extends Animal{
 
 	public void dormir() {
 		System.out.println("Tiempo de dormir");
+	}
+
+	@Override
+	public void codigoChip() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

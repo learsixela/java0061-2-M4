@@ -1,6 +1,8 @@
 package cl.veterinaria.clases;
 
-public class Gato extends Animal{
+import cl.veterinaria.interfaces.Sonido;
+
+public class Gato extends Animal implements Sonido{
 	//atributos
 	private String raza;
 	//constructores
@@ -52,6 +54,12 @@ public class Gato extends Animal{
 	@Override
 	public String toString() {
 		return super.toString() + " raza=" + raza ;
+	}
+
+	@Override
+	public void codigoChip() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

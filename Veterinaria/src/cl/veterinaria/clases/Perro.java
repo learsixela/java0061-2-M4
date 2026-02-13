@@ -1,9 +1,11 @@
 package cl.veterinaria.clases;
 
+import cl.veterinaria.interfaces.Sonido;
+
 /**
  * Subclase de la clase padre Animal
  */
-public class Perro extends Animal{
+public class Perro extends Animal implements Sonido{
 //atributo
 	private String raza;
 //constructor
@@ -51,6 +53,11 @@ public class Perro extends Animal{
 		String mensaje = "Mi Perro se llama " +super.getNombre()+
 				", su raza es: "+ raza + " y pesa: " + super.getPeso() +" kilos.";
 		return mensaje;
+	}
+	@Override
+	public void codigoChip() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

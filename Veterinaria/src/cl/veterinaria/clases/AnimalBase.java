@@ -1,8 +1,9 @@
 package cl.veterinaria.clases;
 
 public interface AnimalBase {
-	String hacerRuido();
+	//String hacerRuido();
 	void comer();
 	void moverse();
 	void dormir();
+	//String imprimirHistorial();
 }

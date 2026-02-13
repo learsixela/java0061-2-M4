@@ -1,8 +1,11 @@
 package cl.veterinaria.clases;
+
+import cl.veterinaria.interfaces.Mascota;
+
 /**
  * Super Clase Padre
  */
-public abstract class Animal implements AnimalBase{
+public abstract class Animal implements AnimalBase,Mascota{
 	private String nombre;
 	private double peso;
 //constructor	

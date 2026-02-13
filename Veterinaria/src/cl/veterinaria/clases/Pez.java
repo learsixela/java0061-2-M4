@@ -6,7 +6,7 @@ public class Pez extends Animal{
 		super(nombre, peso);
 	}
 
-	@Override
+
 	public String hacerRuido() {
 		return "Gluuup";
 	}
@@ -25,6 +25,12 @@ public class Pez extends Animal{
 
 	@Override
 	public void dormir() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void codigoChip() {
 		// TODO Auto-generated method stub
 		
 	}

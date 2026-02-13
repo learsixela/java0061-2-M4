@@ -20,6 +20,8 @@ public class Conejo implements Mascota{
 		
 	}
 
-
+	public void dormir() {
+		System.out.println("Tiempo de dormir");
+	}
 
 }

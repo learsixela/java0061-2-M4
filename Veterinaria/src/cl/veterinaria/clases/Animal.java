@@ -33,6 +33,9 @@ public abstract class Animal {
 	
 	//metodo abstracto
 	public abstract void hacerRuido();
+	public void dormir() {
+		System.out.println("Tiempo de dormir");
+	}
 
 	@Override
 	public String toString() {

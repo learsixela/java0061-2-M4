@@ -14,11 +14,11 @@ public class Main {
 		
 		Perro perro = new Perro("Ayun", 20, "Bulldog");
 		perro.comer();
-		System.out.println(perro.toString());
-		
+		System.out.println(perro);
+		System.out.println("---------");
 		Gato gato = new Gato("Felix",7);
 		gato.comer();
-		System.out.println(gato.toString());
+		System.out.println(gato);
 		System.out.println();
 		
 		System.out.println("**** Polimorfismo *****");
@@ -33,6 +33,24 @@ public class Main {
 			mascota.comer();
 			mascota.moverse();
 		}
+		
+		//Polimorfismo DownCasting
+		Mascota  conejin = new Conejo();
+		conejin.comer();
+		//conejin.dormir();
+		//DownCasting
+		Conejo wonejo = (Conejo) conejin;
+		wonejo.dormir();
+		
+		Pez pescadito = (Pez) conejin; //castException
+		
+		/* InstanceOf*/
+		if(conejin instanceof Pez pez) {
+			pescadito.hacerRuido();
+		} else {
+			System.out.println("No es un pez");
+		}
+		
 		
 	}
 }

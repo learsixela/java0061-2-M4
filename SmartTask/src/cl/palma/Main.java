@@ -27,7 +27,7 @@ public class Main {
 			GestorTareas gestorTareas = new GestorTareas();
 			switch (opcion) {
 				case 1://agregar tarea
-					gestorTareas.agregarTarea();
+					gestorTareas.capturarDatosAgregarTarea();
 					break;
 				case 2:
 					gestorTareas.mostrarTareas();

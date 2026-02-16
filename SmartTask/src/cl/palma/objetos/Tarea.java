@@ -24,7 +24,8 @@ public class Tarea {
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
-		this.prioridad = prioridad;
+		//this.prioridad = prioridad;
+		setPrioridad(prioridad);
 		this.completado = completado;
 	}
 	//métodos (comportamientos)

@@ -10,31 +10,13 @@ public class GestorTareas implements TareaServicio{
 	static int id = 1;
 	static ArrayList<Tarea> listaTareas = new ArrayList<Tarea>();
 	
+	/**
+	 * descripcion del metodo
+	 */
 	@Override
-	public void agregarTarea() {
-		
-		System.out.println("Ingresa el nombre de la tarea:");
-		String nombreTarea = sc.nextLine().trim();
-		
-		if(nombreTarea.isEmpty()) {
-			System.out.println("Nombre no puede estar vacio");
-			return;
-		}
+	public void agregarTarea(String nombreTarea, String descripcionTarea,String prioridadTarea) {
 		
 		
-		System.out.println("Ingresa la descripcion");
-		String descripcionTarea = sc.nextLine();
-		if(descripcionTarea.isEmpty()) {
-			System.out.println("Descripción no puede estar vacio");
-			return;
-		}
-		
-		System.out.println("Ingresa la prioridad");
-		String prioridadTarea = sc.nextLine();
-		if(prioridadTarea.isEmpty()) {
-			System.out.println("prioridad no puede estar vacio");			
-			return;
-		}
 		//objeto
 		Tarea tarea = new Tarea(id,nombreTarea,descripcionTarea,prioridadTarea,false);
 		/*Tarea tarea = new Tarea();
@@ -50,14 +32,41 @@ public class GestorTareas implements TareaServicio{
 		 
 		id++;
 		
-		System.out.println("");
-		System.out.println(listaTareas);
-		System.out.println("");
+		//System.out.println("");
+		//System.out.println(listaTareas);
+		//System.out.println("");
 	}
 
+	public void capturarDatosAgregarTarea() {
+		System.out.println("Ingresa el nombre de la tarea:");
+		String nombreTarea = sc.nextLine().trim();
+		
+		if(nombreTarea.isEmpty()) {
+			System.out.println("Nombre no puede estar vacio");
+			return;
+		}
+		
+		System.out.println("Ingresa la descripcion");
+		String descripcionTarea = sc.nextLine();
+		if(descripcionTarea.isEmpty()) {
+			System.out.println("Descripción no puede estar vacio");
+			return;
+		}
+		
+		System.out.println("Ingresa la prioridad");
+		String prioridadTarea = sc.nextLine();
+		if(prioridadTarea.isEmpty()) {
+			System.out.println("prioridad no puede estar vacio");			
+			return;
+		}
+		
+		agregarTarea(nombreTarea,descripcionTarea,prioridadTarea);
+	}
+	
 	@Override
 	public void mostrarTareas() {
-		if(listaTareas.isEmpty()) {
+		ArrayList<Tarea> tareas = getTareas();
+		if(tareas.isEmpty()) {
 			System.out.println("No hay tareas");
 			return;
 		}
@@ -67,16 +76,17 @@ public class GestorTareas implements TareaServicio{
 		System.out.println("ID   NOMBRE  PRIORIDAD  COMPLETADA");
 		
 		//listaTareas= {tarea1,tarea2, tarea3,...}
-		for (Tarea tarea : listaTareas) {
+		for (Tarea tarea : tareas) {
 			String completado = tarea.isCompletado() ? "Completada": "No completada";
 			System.out.println(tarea.getId()+" - "+tarea.getNombre()+" - "+tarea.getPrioridad() +" - "+completado);
 		}
 		System.out.println("");
 	}
-
+	
 	@Override
 	public void marcarTareaCompletada() {
-		if(listaTareas.isEmpty()) {
+		ArrayList<Tarea> tareas = getTareas();
+		if(tareas.isEmpty()) {
 			System.out.println("No hay tareas");
 			return;
 		}
@@ -86,7 +96,7 @@ public class GestorTareas implements TareaServicio{
 		sc.nextLine();//limpiar el buffer;
 		
 		//listaTareas= {tarea1,tarea2, tarea3,...} ; tarea2={2,"tarea2", "desc2","Baja", false}
-		for (Tarea tarea : listaTareas) {
+		for (Tarea tarea : tareas) {
 			if(idBuscar == tarea.getId()) {
 				if(tarea.isCompletado()) {
 					System.out.println("Tarea ya en estado completado");
@@ -107,8 +117,9 @@ public class GestorTareas implements TareaServicio{
 
 	@Override
 	public void eliminarTarea() {
+		ArrayList<Tarea> tareas = getTareas();
 		// validar si existen tareas en la lista
-		if(listaTareas.isEmpty()) {
+		if(tareas.isEmpty()) {
 			System.out.println("No hay tareas para eliminar");
 			return;
 		}
@@ -119,12 +130,12 @@ public class GestorTareas implements TareaServicio{
 		
 		// recorrer la lista buscando el id (sin foreach)
 		//listaTareas= {tarea2, tarea3,...}
-		for (int i = 0; i < listaTareas.size(); i++) {
+		for (int i = 0; i < tareas.size(); i++) {
 			// si encuentra el id
-			Tarea tarea = listaTareas.get(i);
+			Tarea tarea = tareas.get(i);
 			if(idEliminar == tarea.getId()) {
 				// eliminar tarea de la lista (lista.remove(indice))
-				listaTareas.remove(i);
+				tareas.remove(i);
 				System.out.println("Tarea Eliminada");
 				return;
 			}
@@ -132,6 +143,11 @@ public class GestorTareas implements TareaServicio{
 		
 		System.out.println("Tarea no encontrada con el ID: "+ idEliminar);
 		
+	}
+
+	@Override
+	public ArrayList<Tarea> getTareas() {
+		return listaTareas;
 	}
 
 }

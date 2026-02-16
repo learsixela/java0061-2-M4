@@ -29,7 +29,7 @@ public class Main {
 		};
 		// recorrer Array
 		for (Animal mascota : mascotas) {
-			System.out.println(mascota.hacerRuido());
+			//System.out.println(mascota. .hacerRuido());
 			mascota.comer();
 			mascota.moverse();
 		}

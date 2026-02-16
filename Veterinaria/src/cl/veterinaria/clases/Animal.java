@@ -1,5 +1,6 @@
 package cl.veterinaria.clases;
 
+import cl.veterinaria.interfaces.AnimalBase;
 import cl.veterinaria.interfaces.Mascota;
 
 /**

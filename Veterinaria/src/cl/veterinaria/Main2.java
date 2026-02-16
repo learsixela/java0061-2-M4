@@ -25,7 +25,7 @@ public class Main2 {
 				gato.setRaza("Egipcia");
 			}
 			System.out.println(animal);
-			System.out.println("su sonido es: "+animal.hacerRuido());
+			//System.out.println("su sonido es: "+animal.hacerRuido());
 
 			System.out.println("--------------");
 		}

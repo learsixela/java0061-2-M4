@@ -1,4 +1,4 @@
-package cl.veterinaria.clases;
+package cl.veterinaria.interfaces;
 
 public interface AnimalBase {
 	//String hacerRuido();

@@ -33,7 +33,8 @@ public class Main {
 					gestorTareas.mostrarTareas();
 					break;
 				case 3:
-					gestorTareas.marcarTareaCompletada();
+					int id = gestorTareas.capturarId();
+					gestorTareas.marcarTareaCompletada(id);
 					break;
 				case 4:
 					gestorTareas.eliminarTarea();

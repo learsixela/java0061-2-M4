@@ -9,6 +9,7 @@ public interface TareaServicio {
 	void agregarTarea(String nombreTarea, String descripcionTarea,String prioridadTarea);
 	void mostrarTareas();
 	ArrayList<Tarea> getTareas();
-	void marcarTareaCompletada();
+	void marcarTareaCompletada(int id);
 	void eliminarTarea();
+	void eliminarTodasLasTarea();
 }

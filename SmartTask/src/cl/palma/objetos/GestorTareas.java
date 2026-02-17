@@ -9,7 +9,7 @@ public class GestorTareas implements TareaServicio{
 	static Scanner sc = new Scanner(System.in);
 	static int id = 1;
 	static ArrayList<Tarea> listaTareas = new ArrayList<Tarea>();
-	
+	//private ArrayList<Tarea> listaTareas2 = new ArrayList<>();
 	/**
 	 * descripcion del metodo
 	 */
@@ -83,17 +83,21 @@ public class GestorTareas implements TareaServicio{
 		System.out.println("");
 	}
 	
+	public int capturarId() {
+		System.out.println("Ingresa el ID de la tara a completar");
+		int idBuscar = sc.nextInt();
+		sc.nextLine();//limpiar el buffer;
+		//marcarTareaCompletada(idBuscar);
+		return idBuscar;
+	}
+	
 	@Override
-	public void marcarTareaCompletada() {
+	public void marcarTareaCompletada(int idBuscar) {
 		ArrayList<Tarea> tareas = getTareas();
 		if(tareas.isEmpty()) {
 			System.out.println("No hay tareas");
 			return;
 		}
-		
-		System.out.println("Ingresa el ID de la tara a completar");
-		int idBuscar = sc.nextInt();
-		sc.nextLine();//limpiar el buffer;
 		
 		//listaTareas= {tarea1,tarea2, tarea3,...} ; tarea2={2,"tarea2", "desc2","Baja", false}
 		for (Tarea tarea : tareas) {
@@ -107,12 +111,10 @@ public class GestorTareas implements TareaServicio{
 					System.out.println("Tarea marcada como completado");
 				}
 				return;
-				
 			}
 		}
 		
 		System.out.println("Tarea no encontrada con el ID: "+ idBuscar);
-		
 	}
 
 	@Override
@@ -148,6 +150,15 @@ public class GestorTareas implements TareaServicio{
 	@Override
 	public ArrayList<Tarea> getTareas() {
 		return listaTareas;
+	}
+
+	@Override
+	public void eliminarTodasLasTarea() {
+		listaTareas.clear();
+	}
+	
+	public void resetId() {
+		id = 1;
 	}
 
 }

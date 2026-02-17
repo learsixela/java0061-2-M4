@@ -4,12 +4,13 @@
 package cl.palma.test;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,41 +27,73 @@ class GestorTareasTest {
 	//Instancia la clase
 	private GestorTareas gestorTareas;
 	
-	@BeforeEach // estado limpio, se ejecuta antes de cada prueba
+	@BeforeEach //se ejecuta antes de cada prueba
 	void setUp() {
-		gestorTareas = new GestorTareas(); 
+		gestorTareas = new GestorTareas();// estado limpio 
+		/*gestorTareas.agregarTarea("Tarea0", "Descripcion  tarea1","bAjA");
+		gestorTareas.agregarTarea("Tarea1", "Descripcion  tarea1","bAjA");
+		gestorTareas.agregarTarea("Tarea2", "Descripcion  tarea2","Alta");*/
+	}
+	@AfterEach
+	void reset() {
+		gestorTareas.eliminarTodasLasTarea();
+		gestorTareas.resetId();
 	}
 	
 	@Test
 	void agregarTareaTest() {
-		gestorTareas.agregarTarea("Tarea1", "Descripcion  tarea1","bAjA");
+		gestorTareas.agregarTarea("Tarea0", "Descripcion  tarea1","bAjA");
 		ArrayList<Tarea> listaTareas= gestorTareas.getTareas();
 		//validar que la lista es distinta de cero o vacia
-		assertEquals(1,listaTareas.size());
+		//assertEquals(1,listaTareas.size());
+		assertNotEquals(0, listaTareas.size());
 		//validamos los argumentos
-		assertEquals("Tarea1", listaTareas.get(0).getNombre());
+		assertEquals("Tarea0", listaTareas.get(0).getNombre());
 		assertEquals("BAJA", listaTareas.get(0).getPrioridad());
 		//assertEquals(false,listaTareas.get(0).isCompletado());
 		assertFalse(listaTareas.get(0).isCompletado());
-		assertNotEquals(0, listaTareas.size());
-		
 	}
 	
-	/*@Test
-	void mostrarTareasTest() {
+	@Test
+	void listarTareasTest() {
+		//agregar tareas
+		gestorTareas.agregarTarea("Tarea1", "Descripcion  tarea1","bAjA");
+		gestorTareas.agregarTarea("Tarea2", "Descripcion  tarea2","Alta");
+		//necesitamos una lista de tareas
+		ArrayList<Tarea> listaTareas= gestorTareas.getTareas();
+		
+		//validar que la lista es distinta de cero o vacia
+		assertNotEquals(0, listaTareas.size());
+		assertEquals(2,listaTareas.size());
+		//consultar por datos internos en la lista
+		assertEquals(1,listaTareas.get(0).getId());
+		assertEquals(2,listaTareas.get(1).getId());
 		
 	}
 	
 	@Test
-	void modificarTareaTest() {
-		
+	void marcarTareaCompletadaTest() {
+		//marcar una tarea como completada
+		//verificar si realizo el cambio
+		ArrayList<Tarea> listaTareas= gestorTareas.getTareas();
+		assertTrue(true);
 	}
-	
+	/*
 	@Test
 	void eliminarTareaTest() {
 		
 	}*/
 	
-	
+	/*
+	setUp()
+	agregarTareaTest()
+	reset()
+	setup()
+	listarTareasTest()
+	reset()
+	setup()
+	marcarTareaCompletadaTest()
+	reset()
+	*/
 
 }

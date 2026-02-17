@@ -73,10 +73,24 @@ class GestorTareasTest {
 	
 	@Test
 	void marcarTareaCompletadaTest() {
+		gestorTareas.agregarTarea("Tarea a eliminar", "Descripcion  tarea a eliminar","Media");
+		//ArrayList<Tarea> listaTareas= gestorTareas.getTareas();
+		int id = gestorTareas.getTareas().get(0).getId();//1
+		
 		//marcar una tarea como completada
+		assertTrue(gestorTareas.marcarTareaCompletada(id));
 		//verificar si realizo el cambio
-		ArrayList<Tarea> listaTareas= gestorTareas.getTareas();
-		assertTrue(true);
+		assertTrue(gestorTareas.getTareas().get(0).isCompletado());
+	}
+	
+	@Test
+	void marcarTareaCompletadaErrorTest() {
+		gestorTareas.agregarTarea("Tarea", "Descripcion  tarea a eliminar","Media");
+		
+		//no existe el id de la tarea
+		assertFalse(gestorTareas.marcarTareaCompletada(2));
+		//verificar NO se realizo el cambio
+		assertFalse(gestorTareas.getTareas().get(0).isCompletado());
 	}
 	/*
 	@Test

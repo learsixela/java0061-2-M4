@@ -37,7 +37,8 @@ public class Main {
 					gestorTareas.marcarTareaCompletada(id);
 					break;
 				case 4:
-					gestorTareas.eliminarTarea();
+					//int id = gestorTareas.capturarId();
+					gestorTareas.eliminarTarea(gestorTareas.capturarId());
 					break;
 				case 0:
 					System.out.println("Saliendo del sistema...");

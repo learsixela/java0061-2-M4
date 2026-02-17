@@ -84,19 +84,18 @@ public class GestorTareas implements TareaServicio{
 	}
 	
 	public int capturarId() {
-		System.out.println("Ingresa el ID de la tara a completar");
+		System.out.println("Ingresa el ID de la tarea a completar");
 		int idBuscar = sc.nextInt();
 		sc.nextLine();//limpiar el buffer;
-		//marcarTareaCompletada(idBuscar);
 		return idBuscar;
 	}
 	
 	@Override
-	public void marcarTareaCompletada(int idBuscar) {
+	public boolean marcarTareaCompletada(int idBuscar) {
 		ArrayList<Tarea> tareas = getTareas();
 		if(tareas.isEmpty()) {
 			System.out.println("No hay tareas");
-			return;
+			return false;
 		}
 		
 		//listaTareas= {tarea1,tarea2, tarea3,...} ; tarea2={2,"tarea2", "desc2","Baja", false}
@@ -104,31 +103,30 @@ public class GestorTareas implements TareaServicio{
 			if(idBuscar == tarea.getId()) {
 				if(tarea.isCompletado()) {
 					System.out.println("Tarea ya en estado completado");
+					return false;
 				}else {
 					//tarea.completado = true;
 					tarea.setCompletado(true);
 					//tarea. .setId(12);
 					System.out.println("Tarea marcada como completado");
+					return true;
 				}
-				return;
+				
 			}
 		}
 		
 		System.out.println("Tarea no encontrada con el ID: "+ idBuscar);
+		return false;
 	}
 
 	@Override
-	public void eliminarTarea() {
+	public boolean eliminarTarea(int idEliminar) {
 		ArrayList<Tarea> tareas = getTareas();
 		// validar si existen tareas en la lista
 		if(tareas.isEmpty()) {
 			System.out.println("No hay tareas para eliminar");
-			return;
+			return false;
 		}
-		// solicitar el id a eliminar
-		System.out.println("Ingresa el ID de la tarea a eliminar");
-		int idEliminar = sc.nextInt();
-		sc.nextLine();//limpiar el buffer;
 		
 		// recorrer la lista buscando el id (sin foreach)
 		//listaTareas= {tarea2, tarea3,...}
@@ -139,12 +137,12 @@ public class GestorTareas implements TareaServicio{
 				// eliminar tarea de la lista (lista.remove(indice))
 				tareas.remove(i);
 				System.out.println("Tarea Eliminada");
-				return;
+				return true;
 			}
 		}
 		
 		System.out.println("Tarea no encontrada con el ID: "+ idEliminar);
-		
+		return false;
 	}
 
 	@Override
